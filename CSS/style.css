@@ -1,0 +1,605 @@
+/* CSS Reset */
+
+:root {
+  --main-color: #cccccc;
+  --sec-color: #d2b356;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+  font-family: sans-serif, Arial, Helvetica;
+  scroll-behavior: smooth;
+}
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+a {
+  display: inline-block;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: black;
+  transition: 0.4s;
+}
+
+/* styling Elements */
+
+.top {
+  position: fixed;
+  top: 0px;
+  left: 0;
+  width: 100%;
+  background-color: var(--main-color);
+  padding: 10px;
+  z-index: 20;
+}
+body {
+  font-size: 16px;
+  padding: 0 10px 10px;
+  background-color: var(--main-color);
+}
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  background-color: #ffffff;
+  padding: 1.5em;
+  overflow: hidden;
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+  height: 130vh;
+  background-color: #cccccc;
+  background: url(/Images/banner-image-1.jpg) no-repeat fixed;
+  background-size: cover;
+  background-position: center;
+}
+.nav-bar {
+  position: fixed;
+  top: 20px;
+  left: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: calc(100% - 20px);
+  padding: 0 20px;
+  height: 61px;
+  line-height: 60px;
+  transition: 0.5s;
+  z-index: 2000;
+}
+
+.sticky {
+  position: sticky;
+  background-color: white;
+  box-shadow: 0px 1px 2px #cccccc;
+  z-index: 2000;
+  min-width: 100%;
+  animation: navbar 1s 1 ease-in-out;
+}
+
+.logo {
+  font-weight: 800;
+  font-size: 22px;
+  letter-spacing: 1px;
+  padding-left: 1%;
+  cursor: pointer;
+}
+.links {
+  position: relative;
+  display: none;
+  transition: transform 1s ease-in-out;
+}
+
+.side {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  position: absolute;
+  right: 0;
+  top: 62px;
+  background-color: white;
+  min-width: 30%;
+  padding: 1.8em;
+  border-radius: 3px;
+  transition: transform 1s ease-in-out;
+  transform: translateX(0);
+  z-index: 2000;
+}
+.side > li {
+  align-self: self-start;
+  text-align: right;
+  width: 100%;
+  border-bottom: 1px solid #cccccc;
+  margin-bottom: 10px;
+}
+.links > li:hover,
+.side > li:hover {
+  border-bottom: 1px solid var(--sec-color);
+}
+.links.side > li a {
+  font-size: 12px;
+}
+.links > li:hover a {
+  color: var(--sec-color);
+}
+li.active > a {
+  border-bottom: 1px solid var(--sec-color);
+  color: var(--sec-color);
+}
+.links li,
+.social li {
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #222222;
+  transition: color 0.5s ease;
+  display: inline-block;
+  margin: 0 8px;
+  font-size: 12px;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.social li {
+  font-size: 1em;
+}
+
+.content {
+  position: absolute;
+  top: 20%;
+  left: 1.5em;
+}
+.content > h1 {
+  font-size: 50px;
+  font-weight: 800;
+  line-height: 1.2;
+  text-transform: uppercase;
+  width: 40%;
+  margin: 1.5em 0;
+}
+.content > h1::before {
+  content: "";
+  width: 6%;
+  height: 6px;
+  background-color: var(--sec-color);
+  position: absolute;
+  top: 10%;
+  left: 0;
+}
+
+.content > p {
+  width: 40%;
+  margin: 2.5em 0;
+  color: #5b5b5b;
+  line-height: 1.4;
+}
+
+.content > p::after {
+  content: "";
+  width: 6%;
+  height: 6px;
+  background-color: var(--sec-color);
+  position: absolute;
+  bottom: 15%;
+  left: 0;
+}
+
+#start {
+  padding: 10px;
+  color: black;
+  background-color: #ffffff;
+  text-transform: uppercase;
+  font-weight: 600;
+  border: 3px solid;
+  margin: 3% 0;
+  transition: 0.4s ease-in-out;
+}
+#start:hover {
+  cursor: pointer;
+  color: var(--sec-color);
+  border-color: var(--sec-color);
+}
+
+#start:not(:first-of-type) {
+  margin: 3em;
+}
+.bars {
+  display: inline-block;
+  text-align: center;
+  cursor: pointer;
+  width: 20px;
+}
+
+.sec-title {
+  color: #fbfbfb;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 5em;
+  font-weight: 800;
+  margin: 0.2em 0;
+}
+.feature {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  flex: 1;
+  padding: 1em;
+  margin: 3em 0;
+}
+
+.feature:first-child {
+  max-width: calc(100% / 3);
+}
+
+.info > span,
+.services > span,
+.details > span {
+  display: inline-block;
+  color: #acacc9;
+  margin: 2.5em 0;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 2px;
+}
+
+.info > h2 {
+  font-size: 3em;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+.info > p {
+  margin-top: 1.5em;
+  line-height: 1.2;
+  color: #acacc9;
+}
+.feature .tech {
+  flex: 1;
+  min-width: 50%;
+  margin-bottom: 2em;
+}
+.feature .tech > i {
+  font-size: 2em;
+  margin: 1em 0;
+  color: var(--sec-color);
+}
+.feature .tech > h3 {
+  font-family: Arial, Helvetica, sans-serif;
+  text-transform: uppercase;
+  font-size: 1.2em;
+  margin-bottom: 1em;
+  color: black;
+  font-weight: 600;
+  word-spacing: 5px;
+}
+
+.feature .tech > p {
+  color: #555555;
+  line-height: 1.4;
+}
+
+.container > .image {
+  position: relative;
+  overflow: hidden;
+  width: 26em;
+  height: 16em;
+  transition: 0.6s ease;
+  cursor: pointer;
+}
+.image > img {
+  width: 100%;
+}
+.image > span {
+  font-size: 1em;
+  color: rgb(44, 44, 44);
+  background-color: #cac9c9;
+  font-weight: bold;
+  padding: 5px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  display: none;
+}
+
+.container > .image:hover {
+  opacity: 0.5;
+  transition: 0.6s ease;
+  transform: scale(1.02);
+}
+.image:hover span {
+  display: inline-block;
+}
+
+.full-screen {
+  width: 100%;
+  height: 80vh;
+  background-color: #555555ab;
+  z-index: -1;
+  opacity: 0;
+  position: relative;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: 0.5s ease;
+}
+.full-screen > i {
+  color: white;
+  font-size: 2em;
+  position: absolute;
+  right: 4%;
+  top: 5%;
+  cursor: pointer;
+}
+.full-screen > img {
+  position: absolute;
+  top: 12%;
+  left: 20%;
+  width: 60%;
+  height: 80%;
+  transition: 1s ease-in-out;
+}
+.services {
+  flex: 1;
+  align-self: self-start;
+  position: relative;
+  padding: 1.5em;
+}
+
+.services q {
+  display: block;
+  color: #5b5b5b;
+  font-size: 1.5em;
+  line-height: 1.2;
+  letter-spacing: 1px;
+  margin-top: 1.5em;
+  word-spacing: 2px;
+}
+.services q + p {
+  display: inline-block;
+  position: absolute;
+  right: 1.5em;
+  bottom: -3em;
+}
+
+.services > h3 {
+  margin-bottom: 2em;
+  font-size: 2.5em;
+  text-transform: capitalize;
+  font-weight: 600;
+}
+.services > h3::after {
+  content: "";
+  width: 15%;
+  height: 6px;
+  background-color: var(--sec-color);
+  position: absolute;
+  top: 30%;
+  left: 0.6em;
+}
+
+.services > p {
+  margin-bottom: 2em;
+  line-height: 1.4;
+  word-spacing: 2px;
+}
+
+.services > img {
+  height: 50em;
+}
+
+.details {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.details > h3 {
+  font-size: 2em;
+  text-transform: capitalize;
+  font-weight: 600;
+  margin-bottom: 4em;
+}
+
+.opinions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.person {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 10px;
+}
+.person > q {
+  display: block;
+  line-height: 1.4;
+  margin: 2em 0;
+  word-spacing: 2px;
+  color: #555;
+  text-align: center;
+}
+.person > span {
+  position: relative;
+  margin: 1.5em 0;
+}
+
+.person > span::before {
+  content: "";
+  width: 15%;
+  height: 4px;
+  background-color: var(--sec-color);
+  position: absolute;
+  bottom: 2.5em;
+  left: 6.4em;
+}
+.person > img {
+  border-radius: 50%;
+  height: 9em;
+  text-align: center;
+}
+
+.feature > .image {
+  flex: 1;
+  flex-basis: 33%;
+  position: relative;
+  text-align: center;
+  transition: 1s ease-in-out;
+  cursor: pointer;
+}
+.feature > .image:hover::before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  transition: 0.6s ease-in-out;
+}
+.feature > .image > img {
+  height: 8em;
+}
+
+.feature > .image > span {
+  color: white;
+  text-transform: uppercase;
+  font-size: 1em;
+  font-weight: 600;
+}
+
+.package {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.package .type {
+  flex: 1;
+  text-align: center;
+  padding: 2em 0;
+  border: 1px solid #acacc9;
+  border-radius: 4px;
+  transition: transform 0.6s;
+}
+
+.package .type:hover {
+  border: none;
+  outline: 6px solid var(--sec-color);
+  transform: scale(1.03);
+}
+
+.type > div {
+  margin-bottom: 2em;
+}
+.type > div:nth-of-type(2) {
+  background-color: #7f7a7a30;
+  padding: 2em;
+}
+
+.type div > span {
+  font-size: 1.2em;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+.type div > p {
+  font-size: 1em;
+  font-style: italic;
+  word-spacing: 2px;
+  color: #acacc9;
+  margin-top: 10px;
+}
+#price {
+  font-size: 5em;
+  position: relative;
+}
+
+#price::before {
+  content: "$";
+  position: absolute;
+  bottom: 70%;
+  left: -10%;
+  font-size: 0.4em;
+}
+
+.pros > div:not(:last-child) {
+  margin-bottom: 1em;
+  border-bottom: 0.5px dashed var(--main-color);
+  padding: 10px;
+}
+#active {
+  background-color: var(--sec-color);
+}
+#active > p {
+  color: white;
+}
+
+footer {
+  min-height: 4em;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: baseline;
+  background-color: #fbfbfb;
+  padding: 1.5em;
+  margin-top: 2em;
+}
+
+footer > p {
+  color: #acacc9;
+  font-size: 1em;
+}
+footer span {
+  color: black;
+}
+
+.go-up {
+  position: fixed;
+  bottom: 10%;
+  right: 7%;
+  font-size: 2.5em;
+  animation: go-up 0.6s infinite ease-in-out;
+  cursor: pointer;
+}
